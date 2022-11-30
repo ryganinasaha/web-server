@@ -19,7 +19,7 @@ server.post('/send-order', async(req, res) => {
     console.log(req.body)
 
     await telegram.sendToPrivateChat(`
-        <b>Email: ${req.body.from}</b>\nMassage: ${req.body.text}`
+        <b>Name: ${req.body.from}</b>\nEmail: ${req.body.email}\nNumber: ${req.body.number}\nDate: ${req.body.date}\nFoun: ${req.body.foun}`
     )
 
     res.send()
