@@ -25,6 +25,16 @@ server.post('/send-order', async(req, res) => {
     res.send()
 })
 
+server.post('send-hi', async(req, res) => {
+    console.log(req.body)
+
+    await telegram.sendToPrivateChat(`
+        <b>Name: ${req.body.from}</b>\nEmail: ${req.body.email}\nNumber: ${req.body.number}`
+    )
+
+    res.send()
+})
+
 server.listen(8080, () => {
     console.log('Server started on 8080 port')
 })
