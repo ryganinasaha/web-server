@@ -29,7 +29,7 @@ server.post('send-hi', async(req, res) => {
     console.log(req.body)
 
     await telegram.sendToPrivateChat(`
-        <b>Name: ${req.body.from}</b>\nEmail: ${req.body.email}\nNumber: ${req.body.number}`
+        <b>Name: ${req.body.from}</b>\nEmail: ${req.body.email}\nText: ${req.body.text}`
     )
 
     res.send()
