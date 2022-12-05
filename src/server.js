@@ -19,17 +19,17 @@ server.post('/send-order', async(req, res) => {
     console.log(req.body)
 
     await telegram.sendToPrivateChat(`
-        <b>Name: ${req.body.from}</b>\nEmail: ${req.body.email}\nNumber: ${req.body.number}\nDate: ${req.body.date}\nFoun: ${req.body.foun}`
+        Заявка\n<b>Name: ${req.body.from}</b>\nEmail: ${req.body.email}\nNumber: ${req.body.number}\nDate: ${req.body.date}\nFoun: ${req.body.foun}`
     )
 
     res.send()
 })
 
-server.post('send-hi', async(req, res) => {
+server.post('/send-hi', async(req, res) => {
     console.log(req.body)
 
     await telegram.sendToPrivateChat(`
-        <b>Name: ${req.body.from}</b>\nEmail: ${req.body.email}\nText: ${req.body.text}`
+        Связь\n<b>Name: ${req.body.from}</b>\nEmail: ${req.body.email}\nText: ${req.body.text}`
     )
 
     res.send()
